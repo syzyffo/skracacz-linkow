@@ -1,11 +1,11 @@
-package com.syzyffo.linkshortener.controller;
+package com.syzyffo.linkshortener.link;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.time.LocalDate;
 
-record LinkDto(String id,@JsonIgnore String email, String targetUrl, LocalDate expirationDate, int visits) {
+public record LinkDto(String id, @JsonIgnore String email, String targetUrl, LocalDate expirationDate, int visits) {
 
     public String getShortenedLink(){
         return ServletUriComponentsBuilder
